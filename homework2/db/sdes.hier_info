@@ -1,11 +1,140 @@
 |sdes
-SW[0] => LEDR[0].DATAIN
-SW[1] => LEDR[1].DATAIN
-SW[2] => LEDR[2].DATAIN
-SW[3] => LEDR[3].DATAIN
-LEDR[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[2] <= SW[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[3] <= SW[3].DB_MAX_OUTPUT_PORT_TYPE
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+LEDR[0] << p8:p_8_B.out
+LEDR[1] << p8:p_8_B.out
+LEDR[2] << p8:p_8_B.out
+LEDR[3] << p8:p_8_B.out
+LEDR[4] << p8:p_8_B.out
+LEDR[5] << p8:p_8_B.out
+LEDR[6] << p8:p_8_B.out
+LEDR[7] << p8:p_8_B.out
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+
+
+|sdes|p10:p_10
+in[9] => out[4].DATAIN
+in[8] => out[2].DATAIN
+in[7] => out[1].DATAIN
+in[6] => out[6].DATAIN
+in[5] => out[0].DATAIN
+in[4] => out[8].DATAIN
+in[3] => out[5].DATAIN
+in[2] => out[9].DATAIN
+in[1] => out[7].DATAIN
+in[0] => out[3].DATAIN
+out[0] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[8].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[9].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|lshift:ls1_A
+in[0] => out[1].DATAIN
+in[1] => out[2].DATAIN
+in[2] => out[3].DATAIN
+in[3] => out[4].DATAIN
+in[4] => out[0].DATAIN
+out[0] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|lshift:ls1_B
+in[0] => out[1].DATAIN
+in[1] => out[2].DATAIN
+in[2] => out[3].DATAIN
+in[3] => out[4].DATAIN
+in[4] => out[0].DATAIN
+out[0] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|p8:p_8_A
+in[9] => out[1].DATAIN
+in[8] => out[0].DATAIN
+in[7] => out[3].DATAIN
+in[6] => out[5].DATAIN
+in[5] => out[7].DATAIN
+in[4] => out[2].DATAIN
+in[3] => out[4].DATAIN
+in[2] => out[6].DATAIN
+in[1] => ~NO_FANOUT~
+in[0] => ~NO_FANOUT~
+out[0] <= in[8].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[9].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|lshift2:ls2_A
+in[0] => out[2].DATAIN
+in[1] => out[3].DATAIN
+in[2] => out[4].DATAIN
+in[3] => out[0].DATAIN
+in[4] => out[1].DATAIN
+out[0] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|lshift2:ls2_B
+in[0] => out[2].DATAIN
+in[1] => out[3].DATAIN
+in[2] => out[4].DATAIN
+in[3] => out[0].DATAIN
+in[4] => out[1].DATAIN
+out[0] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|p8:p_8_B
+in[9] => out[1].DATAIN
+in[8] => out[0].DATAIN
+in[7] => out[3].DATAIN
+in[6] => out[5].DATAIN
+in[5] => out[7].DATAIN
+in[4] => out[2].DATAIN
+in[3] => out[4].DATAIN
+in[2] => out[6].DATAIN
+in[1] => ~NO_FANOUT~
+in[0] => ~NO_FANOUT~
+out[0] <= in[8].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[9].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
 
 

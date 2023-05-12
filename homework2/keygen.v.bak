@@ -1,0 +1,35 @@
+module keygen(
+module sdes(
+input wire [9:0]SW,
+output wire [7:0]key1,
+output wire [7:0]key2
+);
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+wire [9:0] p10out;
+wire [9:0] ls1out;
+wire [4:0] ls1out_A;
+wire [4:0] ls1out_B;
+wire [9:0] ls2out;
+wire [7:0] key1;
+wire [7:0] key2;
+
+//=======================================================
+//  Structural coding
+//=======================================================
+p10 p_10(.in(SW[9:0]), .out(p10out[9:0]) );
+
+lshift ls1_A(.in(p10out[9:5]), .out(ls1out_A[4:0]) );
+lshift ls1_B(.in(p10out[4:0]), .out(ls1out_B[4:0]) );
+
+p8 p_8_A(.in(ls1out[9:0]), .out(key1[7:0]) );
+
+
+lshift ls2_A(.in(ls1out_A[4:0]), .out(ls2out[9:5]) );
+lshift ls2_B(.in(ls1out_B[4:0]), .out(ls2out[4:0]) );
+
+p8 p_8_B(.in(ls2out[9:0]), .out(key2[7:0]) );
+
+endmodule

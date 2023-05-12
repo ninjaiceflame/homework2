@@ -4,3 +4,5 @@ output wire [4:0] out
 );
 
 assign out = {in[3:0],in[4]};
+
+endmodule
