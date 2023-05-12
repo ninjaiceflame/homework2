@@ -1,5 +1,5 @@
 Fitter report for sdes
-Thu May 11 23:41:47 2023
+Thu May 11 23:47:49 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Thu May 11 23:41:47 2023          ;
+; Fitter Status                   ; Successful - Thu May 11 23:47:49 2023          ;
 ; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                   ; sdes                                           ;
 ; Top-level Entity Name           ; sdes                                           ;
@@ -2202,9 +2202,9 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file C:/Users/Nathan/Desktop/cst466/homework2/output_files/sdes.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 245 warnings
     Info: Peak virtual memory: 6677 megabytes
-    Info: Processing ended: Thu May 11 23:41:47 2023
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:01:27
+    Info: Processing ended: Thu May 11 23:47:49 2023
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:01:28
 
 
 +----------------------------+

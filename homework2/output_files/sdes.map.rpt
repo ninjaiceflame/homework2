@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sdes
-Thu May 11 23:41:17 2023
+Thu May 11 23:47:20 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 11 23:41:17 2023          ;
+; Analysis & Synthesis Status     ; Successful - Thu May 11 23:47:20 2023          ;
 ; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                   ; sdes                                           ;
 ; Top-level Entity Name           ; sdes                                           ;
@@ -274,7 +274,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 20                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.43                        ;
+; Average LUT depth     ; 3.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -293,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu May 11 23:41:11 2023
+    Info: Processing started: Thu May 11 23:47:15 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sdes -c sdes
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -322,7 +322,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file output_
     Info (12023): Found entity 1: s1 File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/p4.v
     Info (12023): Found entity 1: p4 File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/p4.v Line: 1
-Critical Warning (10846): Verilog HDL Instantiation warning at sdes.v(28): instance has no name File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at sdes.v(46): instance has no name File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 46
 Info (12127): Elaborating entity "sdes" for the top level hierarchy
 Warning (10034): Output port "LEDR[9..8]" at sdes.v(4) has no driver File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 4
 Info (12128): Elaborating entity "keygen" for hierarchy "keygen:keyfn" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 23
@@ -330,8 +330,8 @@ Info (12128): Elaborating entity "p10" for hierarchy "keygen:keyfn|p10:p_10" Fil
 Info (12128): Elaborating entity "lshift" for hierarchy "keygen:keyfn|lshift:ls1_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 22
 Info (12128): Elaborating entity "p8" for hierarchy "keygen:keyfn|p8:p_8_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 26
 Info (12128): Elaborating entity "lshift2" for hierarchy "keygen:keyfn|lshift2:ls2_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 30
-Info (12128): Elaborating entity "ip" for hierarchy "ip:comb_13" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 28
-Info (12128): Elaborating entity "fk" for hierarchy "fk:fk_a" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 31
+Info (12128): Elaborating entity "ip" for hierarchy "ip:comb_13" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 46
+Info (12128): Elaborating entity "fk" for hierarchy "fk:fk_a" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 49
 Info (12128): Elaborating entity "ep" for hierarchy "fk:fk_a|ep:e_p" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 23
 Info (12128): Elaborating entity "s0" for hierarchy "fk:fk_a|s0:s_0" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 29
 Warning (10030): Net "box.data_a" at s0.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
@@ -342,7 +342,7 @@ Warning (10030): Net "box.data_a" at s1.v(12) has no driver or initial value, us
 Warning (10030): Net "box.waddr_a" at s1.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
 Warning (10030): Net "box.we_a" at s1.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
 Info (12128): Elaborating entity "p4" for hierarchy "fk:fk_a|p4:p_4" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 35
-Info (12128): Elaborating entity "ip_inv" for hierarchy "ip_inv:inv" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 37
+Info (12128): Elaborating entity "ip_inv" for hierarchy "ip_inv:inv" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 55
 Info (276014): Found 4 instances of uninferred RAM logic
     Info (276004): RAM logic "fk:fk_b|s1:s_1|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
     Info (276004): RAM logic "fk:fk_b|s0:s_0|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
@@ -935,8 +935,8 @@ Info (21057): Implemented 30 device resources after synthesis - the final resour
     Info (21061): Implemented 10 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 587 warnings
     Info: Peak virtual memory: 4834 megabytes
-    Info: Processing ended: Thu May 11 23:41:17 2023
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Thu May 11 23:47:20 2023
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:12
 
 
