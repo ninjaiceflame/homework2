@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sdes
-Thu May 11 19:08:48 2023
+Thu May 11 23:41:17 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,7 +14,7 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "keygen:key"
+  9. Port Connectivity Checks: "keygen:keyfn"
  10. Post-Synthesis Netlist Statistics for Top Partition
  11. Elapsed Time Per Partition
  12. Analysis & Synthesis Messages
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 11 19:08:48 2023          ;
+; Analysis & Synthesis Status     ; Successful - Thu May 11 23:41:17 2023          ;
 ; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                   ; sdes                                           ;
 ; Top-level Entity Name           ; sdes                                           ;
@@ -178,43 +178,53 @@ https://fpgasoftware.intel.com/eula.
 ; output_files/p8.v                ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/output_files/p8.v     ;         ;
 ; keygen.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/keygen.v              ;         ;
 ; lshift2.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/lshift2.v             ;         ;
+; ip.v                             ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/ip.v                  ;         ;
+; output_files/fk.v                ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v     ;         ;
+; ep.v                             ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/ep.v                  ;         ;
+; output_files/s0.v                ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v     ;         ;
+; output_files/s1.v                ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v     ;         ;
+; output_files/p4.v                ; yes             ; User Verilog HDL File  ; C:/Users/Nathan/Desktop/cst466/homework2/output_files/p4.v     ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 20    ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; SW[3] ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 28    ;
-; Average fan-out                             ; 0.70  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimate of Logic utilization (ALMs needed) ; 7                ;
+;                                             ;                  ;
+; Combinational ALUT usage for logic          ; 10               ;
+;     -- 7 input functions                    ; 0                ;
+;     -- 6 input functions                    ; 4                ;
+;     -- 5 input functions                    ; 2                ;
+;     -- 4 input functions                    ; 2                ;
+;     -- <=3 input functions                  ; 2                ;
+;                                             ;                  ;
+; Dedicated logic registers                   ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 20               ;
+;                                             ;                  ;
+; Total DSP Blocks                            ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; fk:fk_a|out[3]~0 ;
+; Maximum fan-out                             ; 5                ;
+; Total fan-out                               ; 74               ;
+; Average fan-out                             ; 1.48             ;
++---------------------------------------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |sdes                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 20   ; 0            ; |sdes               ; sdes        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
+; |sdes                      ; 10 (0)              ; 0 (0)                     ; 0                 ; 0          ; 20   ; 0            ; |sdes                ; sdes        ; work         ;
+;    |fk:fk_a|               ; 6 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sdes|fk:fk_a        ; fk          ; work         ;
+;       |s0:s_0|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sdes|fk:fk_a|s0:s_0 ; s0          ; work         ;
+;       |s1:s_1|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sdes|fk:fk_a|s1:s_1 ; s1          ; work         ;
+;    |fk:fk_b|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sdes|fk:fk_b        ; fk          ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,13 +243,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "keygen:key"                                                                                              ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; key1 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+
+; Port Connectivity Checks: "keygen:keyfn"      ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; key10[8..7] ; Input ; Info     ; Stuck at VCC ;
+; key10[6..5] ; Input ; Info     ; Stuck at GND ;
+; key10[1..0] ; Input ; Info     ; Stuck at GND ;
+; key10[9]    ; Input ; Info     ; Stuck at GND ;
+; key10[4]    ; Input ; Info     ; Stuck at VCC ;
+; key10[3]    ; Input ; Info     ; Stuck at GND ;
+; key10[2]    ; Input ; Info     ; Stuck at VCC ;
++-------------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -247,13 +263,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
+; arriav_lcell_comb     ; 15                          ;
+;     normal            ; 15                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 4                           ;
 ; boundary_port         ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -272,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu May 11 19:08:43 2023
+    Info: Processing started: Thu May 11 23:41:11 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sdes -c sdes
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -288,17 +309,49 @@ Info (12021): Found 1 design units, including 1 entities, in source file keygen.
     Info (12023): Found entity 1: keygen File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lshift2.v
     Info (12023): Found entity 1: lshift2 File: C:/Users/Nathan/Desktop/cst466/homework2/lshift2.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file ip.v
+    Info (12023): Found entity 1: ip File: C:/Users/Nathan/Desktop/cst466/homework2/ip.v Line: 1
+    Info (12023): Found entity 2: ip_inv File: C:/Users/Nathan/Desktop/cst466/homework2/ip.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/fk.v
+    Info (12023): Found entity 1: fk File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ep.v
+    Info (12023): Found entity 1: ep File: C:/Users/Nathan/Desktop/cst466/homework2/ep.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/s0.v
+    Info (12023): Found entity 1: s0 File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/s1.v
+    Info (12023): Found entity 1: s1 File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/p4.v
+    Info (12023): Found entity 1: p4 File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/p4.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at sdes.v(28): instance has no name File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 28
 Info (12127): Elaborating entity "sdes" for the top level hierarchy
 Warning (10034): Output port "LEDR[9..8]" at sdes.v(4) has no driver File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 4
-Info (12128): Elaborating entity "keygen" for hierarchy "keygen:key" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 6
-Info (12128): Elaborating entity "p10" for hierarchy "keygen:key|p10:p_10" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 19
-Info (12128): Elaborating entity "lshift" for hierarchy "keygen:key|lshift:ls1_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 22
-Info (12128): Elaborating entity "p8" for hierarchy "keygen:key|p8:p_8_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 26
-Info (12128): Elaborating entity "lshift2" for hierarchy "keygen:key|lshift2:ls2_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 30
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "keygen" for hierarchy "keygen:keyfn" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 23
+Info (12128): Elaborating entity "p10" for hierarchy "keygen:keyfn|p10:p_10" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 19
+Info (12128): Elaborating entity "lshift" for hierarchy "keygen:keyfn|lshift:ls1_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 22
+Info (12128): Elaborating entity "p8" for hierarchy "keygen:keyfn|p8:p_8_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 26
+Info (12128): Elaborating entity "lshift2" for hierarchy "keygen:keyfn|lshift2:ls2_A" File: C:/Users/Nathan/Desktop/cst466/homework2/keygen.v Line: 30
+Info (12128): Elaborating entity "ip" for hierarchy "ip:comb_13" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 28
+Info (12128): Elaborating entity "fk" for hierarchy "fk:fk_a" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 31
+Info (12128): Elaborating entity "ep" for hierarchy "fk:fk_a|ep:e_p" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 23
+Info (12128): Elaborating entity "s0" for hierarchy "fk:fk_a|s0:s_0" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 29
+Warning (10030): Net "box.data_a" at s0.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
+Warning (10030): Net "box.waddr_a" at s0.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
+Warning (10030): Net "box.we_a" at s0.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
+Info (12128): Elaborating entity "s1" for hierarchy "fk:fk_a|s1:s_1" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 32
+Warning (10030): Net "box.data_a" at s1.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
+Warning (10030): Net "box.waddr_a" at s1.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
+Warning (10030): Net "box.we_a" at s1.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
+Info (12128): Elaborating entity "p4" for hierarchy "fk:fk_a|p4:p_4" File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/fk.v Line: 35
+Info (12128): Elaborating entity "ip_inv" for hierarchy "ip_inv:inv" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 37
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276004): RAM logic "fk:fk_b|s1:s_1|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
+    Info (276004): RAM logic "fk:fk_b|s0:s_0|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
+    Info (276004): RAM logic "fk:fk_a|s1:s_1|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s1.v Line: 12
+    Info (276004): RAM logic "fk:fk_a|s0:s_0|box" is uninferred due to inappropriate RAM size File: C:/Users/Nathan/Desktop/cst466/homework2/output_files/s0.v Line: 12
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 4
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 4
+Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
@@ -874,15 +927,16 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 2
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 2
-Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 2
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Nathan/Desktop/cst466/homework2/sdes.v Line: 2
+Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 10 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 581 warnings
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Thu May 11 19:08:48 2023
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:11
+    Info (21061): Implemented 10 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 587 warnings
+    Info: Peak virtual memory: 4834 megabytes
+    Info: Processing ended: Thu May 11 23:41:17 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
 
 

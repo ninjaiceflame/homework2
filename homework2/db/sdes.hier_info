@@ -7,21 +7,21 @@ SW[4] => SW[4].IN1
 SW[5] => SW[5].IN1
 SW[6] => SW[6].IN1
 SW[7] => SW[7].IN1
-SW[8] => SW[8].IN1
-SW[9] => SW[9].IN1
-LEDR[0] <= keygen:key.key2
-LEDR[1] <= keygen:key.key2
-LEDR[2] <= keygen:key.key2
-LEDR[3] <= keygen:key.key2
-LEDR[4] <= keygen:key.key2
-LEDR[5] <= keygen:key.key2
-LEDR[6] <= keygen:key.key2
-LEDR[7] <= keygen:key.key2
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+LEDR[0] <= ip_inv:inv.out
+LEDR[1] <= ip_inv:inv.out
+LEDR[2] <= ip_inv:inv.out
+LEDR[3] <= ip_inv:inv.out
+LEDR[4] <= ip_inv:inv.out
+LEDR[5] <= ip_inv:inv.out
+LEDR[6] <= ip_inv:inv.out
+LEDR[7] <= ip_inv:inv.out
 LEDR[8] <= <GND>
 LEDR[9] <= <GND>
 
 
-|sdes|keygen:key
+|sdes|keygen:keyfn
 key10[0] => key10[0].IN1
 key10[1] => key10[1].IN1
 key10[2] => key10[2].IN1
@@ -50,7 +50,7 @@ key2[6] <= p8:p_8_B.out
 key2[7] <= p8:p_8_B.out
 
 
-|sdes|keygen:key|p10:p_10
+|sdes|keygen:keyfn|p10:p_10
 in[9] => out[4].DATAIN
 in[8] => out[2].DATAIN
 in[7] => out[1].DATAIN
@@ -73,7 +73,7 @@ out[8] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
 out[9] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|lshift:ls1_A
+|sdes|keygen:keyfn|lshift:ls1_A
 in[0] => out[1].DATAIN
 in[1] => out[2].DATAIN
 in[2] => out[3].DATAIN
@@ -86,7 +86,7 @@ out[3] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|lshift:ls1_B
+|sdes|keygen:keyfn|lshift:ls1_B
 in[0] => out[1].DATAIN
 in[1] => out[2].DATAIN
 in[2] => out[3].DATAIN
@@ -99,7 +99,7 @@ out[3] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|p8:p_8_A
+|sdes|keygen:keyfn|p8:p_8_A
 in[9] => out[1].DATAIN
 in[8] => out[0].DATAIN
 in[7] => out[3].DATAIN
@@ -120,7 +120,7 @@ out[6] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|lshift2:ls2_A
+|sdes|keygen:keyfn|lshift2:ls2_A
 in[0] => out[2].DATAIN
 in[1] => out[3].DATAIN
 in[2] => out[4].DATAIN
@@ -133,7 +133,7 @@ out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
 out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|lshift2:ls2_B
+|sdes|keygen:keyfn|lshift2:ls2_B
 in[0] => out[2].DATAIN
 in[1] => out[3].DATAIN
 in[2] => out[4].DATAIN
@@ -146,7 +146,7 @@ out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
 out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|sdes|keygen:key|p8:p_8_B
+|sdes|keygen:keyfn|p8:p_8_B
 in[9] => out[1].DATAIN
 in[8] => out[0].DATAIN
 in[7] => out[3].DATAIN
@@ -165,5 +165,185 @@ out[4] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
 out[5] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
 out[6] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|ip:comb_13
+in[7] => ipout[2].DATAIN
+in[6] => ipout[0].DATAIN
+in[5] => ipout[6].DATAIN
+in[4] => ipout[1].DATAIN
+in[3] => ipout[3].DATAIN
+in[2] => ipout[5].DATAIN
+in[1] => ipout[7].DATAIN
+in[0] => ipout[4].DATAIN
+ipout[0] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+ipout[1] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+ipout[2] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+ipout[3] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+ipout[4] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+ipout[5] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+ipout[6] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+ipout[7] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_a
+a[0] => xor_b_out.IN1
+a[1] => xor_b_out.IN1
+a[2] => xor_b_out.IN1
+a[3] => xor_b_out.IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+key[0] => xor_a_out.IN1
+key[1] => xor_a_out.IN1
+key[2] => xor_a_out.IN1
+key[3] => xor_a_out.IN1
+key[4] => xor_a_out.IN1
+key[5] => xor_a_out.IN1
+key[6] => xor_a_out.IN1
+key[7] => xor_a_out.IN1
+out[0] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_a|ep:e_p
+in[3] => out[1].DATAIN
+in[3] => out[7].DATAIN
+in[2] => out[2].DATAIN
+in[2] => out[4].DATAIN
+in[1] => out[3].DATAIN
+in[1] => out[5].DATAIN
+in[0] => out[0].DATAIN
+in[0] => out[6].DATAIN
+out[0] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_a|s0:s_0
+in[3] => box.RADDR2
+in[2] => box.RADDR
+in[1] => box.RADDR1
+in[0] => box.RADDR3
+out[0] <= box.DATAOUT
+out[1] <= box.DATAOUT1
+
+
+|sdes|fk:fk_a|s1:s_1
+in[3] => box.RADDR2
+in[2] => box.RADDR
+in[1] => box.RADDR1
+in[0] => box.RADDR3
+out[0] <= box.DATAOUT
+out[1] <= box.DATAOUT1
+
+
+|sdes|fk:fk_a|p4:p_4
+in[3] => out[1].DATAIN
+in[2] => out[2].DATAIN
+in[1] => out[0].DATAIN
+in[0] => out[3].DATAIN
+out[0] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_b
+a[0] => xor_b_out.IN1
+a[1] => xor_b_out.IN1
+a[2] => xor_b_out.IN1
+a[3] => xor_b_out.IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+key[0] => xor_a_out.IN1
+key[1] => xor_a_out.IN1
+key[2] => xor_a_out.IN1
+key[3] => xor_a_out.IN1
+key[4] => xor_a_out.IN1
+key[5] => xor_a_out.IN1
+key[6] => xor_a_out.IN1
+key[7] => xor_a_out.IN1
+out[0] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= xor_b_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_b|ep:e_p
+in[3] => out[1].DATAIN
+in[3] => out[7].DATAIN
+in[2] => out[2].DATAIN
+in[2] => out[4].DATAIN
+in[1] => out[3].DATAIN
+in[1] => out[5].DATAIN
+in[0] => out[0].DATAIN
+in[0] => out[6].DATAIN
+out[0] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|fk:fk_b|s0:s_0
+in[3] => box.RADDR2
+in[2] => box.RADDR
+in[1] => box.RADDR1
+in[0] => box.RADDR3
+out[0] <= box.DATAOUT
+out[1] <= box.DATAOUT1
+
+
+|sdes|fk:fk_b|s1:s_1
+in[3] => box.RADDR2
+in[2] => box.RADDR
+in[1] => box.RADDR1
+in[0] => box.RADDR3
+out[0] <= box.DATAOUT
+out[1] <= box.DATAOUT1
+
+
+|sdes|fk:fk_b|p4:p_4
+in[3] => out[1].DATAIN
+in[2] => out[2].DATAIN
+in[1] => out[0].DATAIN
+in[0] => out[3].DATAIN
+out[0] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sdes|ip_inv:inv
+in[7] => out[1].DATAIN
+in[6] => out[3].DATAIN
+in[5] => out[0].DATAIN
+in[4] => out[4].DATAIN
+in[3] => out[7].DATAIN
+in[2] => out[5].DATAIN
+in[1] => out[2].DATAIN
+in[0] => out[6].DATAIN
+out[0] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
 
 

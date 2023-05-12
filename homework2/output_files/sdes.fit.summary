@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu May 11 19:09:05 2023
+Fitter Status : Successful - Thu May 11 23:41:47 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : sdes
 Top-level Entity Name : sdes
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 8 / 32,070 ( < 1 % )
 Total registers : 0
 Total pins : 20 / 457 ( 4 % )
 Total virtual pins : 0

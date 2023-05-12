@@ -1,0 +1,17 @@
+module fk(
+input wire [7:0] ip,
+input wire [7:0] key,
+output wire [7:0] out
+);
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+wire [3:0] ep_in;
+wire [7:0] ep_out;
+
+assign ep_in = ip[3:0]
+//Expanded Permutation (EP)
+assign ep_oit = {ip[0], ip[3:1], ip[2:0], ip[3]]}
+
+endmodule

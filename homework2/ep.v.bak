@@ -1,0 +1,8 @@
+module ep(
+input wire [0:4] in,
+output wire [7:0] out
+);
+
+assign out = {in[0], in[3:1], in[2:0], in[3]};
+
+endmodule 
